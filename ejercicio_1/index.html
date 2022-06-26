@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora de materias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-5 row justify-content-center">
+            <div style="width: 40%;">
+                <form id="form-calculator">
+                    <h2>Calculadora de costos de matrícula</h2>
+                    <div class="mb-3 mt-3">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="Ej: Mario Velandia">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="materias">N&uacute;mero de materias</label>
+                        <input type="number" class="form-control" id="materias" name="materias" value="0">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="valor">Valor de la materia</label>
+                        <input type="number" class="form-control" id="valor" name="valor" value="0">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="descuento">Descuento (20%)</label>
+                        <input type="number" class="form-control" id="descuento" name="descuento" value="0" disabled>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="papeleria">Costo de Papeler&iacute;a</label>
+                        <input type="number" class="form-control" id="papeleria" name="papeleria" value="0" disabled>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="carnet">Costo de Carnet</label>
+                        <input type="number" class="form-control" id="carnet" name="carnet" value="0" disabled>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Calcular</button>
+                    <button type="button" id="borrar" name="borrar" class="btn btn-danger w-100 mt-2">Borrar</button>
+                </form>
+                <div class="container rounded text-bg-primary p-3 text-center mt-2">
+                    <h2 id="total">400000</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
