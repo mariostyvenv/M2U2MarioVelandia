@@ -12,25 +12,38 @@
 <body style="background-color:#e0e0e0;">
     <div class="container">
         <div class="mt-5 row justify-content-center">
-            <div style="width: 40%;" class="border border-success rounded p-5 m-5">
-                <form id="form-calculator">
+            <div style="width: 45%;" class="border border-success rounded p-5 m-5">
+                <form>
                     <h1>Calculadora</h1>
                     <div class="mb-3 mt-3">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre"
                             placeholder="Ej: Mario Velandia" required>
                     </div>
-                    <div class="mb-3 mt-3">
-                        <label for="materias">N&uacute;mero de materias</label>
-                        <input type="number" class="form-control" id="materias" name="materias" required>
-                    </div>
-                    <div class="mb-3 mt-3">
-                        <label for="valor">Valor de la materia</label>
-                        <input type="number" class="form-control" id="valor" name="valor" required>
-                    </div>
+                    <table class="table table-success table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Valor</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="render-zone">
+                            <tr id="controller-list">
+                                <td colspan="1">
+                                    <select class="form-select" id="render-options">
+
+                                    </select>
+                                </td>
+                                <td colspan="2">
+                                    <button class="btn btn-primary w-100" id="button-add" type="button">Agregar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div class="mb-3 mt-3">
                         <label for="descuento">Descuento (20%)</label>
-                        <input type="number" class="form-control" id="descuento" name="descuento" disabled>
+                        <input type="text" class="form-control" id="descuento" name="descuento" disabled>
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="papeleria">Costo de Papeler&iacute;a</label>
@@ -40,7 +53,6 @@
                         <label for="carnet">Costo de Carnet</label>
                         <input type="number" class="form-control" id="carnet" name="carnet" disabled>
                     </div>
-                    <button type="submit" class="btn btn-success w-100">Calcular</button>
                     <button type="button" id="borrar" name="borrar" class="btn btn-danger w-100 mt-2">Borrar</button>
                 </form>
                 <div class="container rounded text-bg-primary p-3 text-center mt-2 mb-5">

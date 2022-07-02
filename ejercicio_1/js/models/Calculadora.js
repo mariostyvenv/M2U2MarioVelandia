@@ -1,27 +1,25 @@
 class Calculadora {
 
-    constructor({ eform, enombre, ematerias, evalor, edescuento, epapeleria, ecarnet, etotal, eborrar }) {
-        this.form = eform;
+    constructor({
+        enombre,
+        edescuento,
+        epapeleria,
+        ecarnet,
+        etotal,
+        eborrar,
+        listSubject
+    }) {
         this.nombre = enombre;
-        this.materias = ematerias;
-        this.valor = evalor;
         this.descuento = edescuento;
         this.papeleria = epapeleria;
         this.carnet = ecarnet;
         this.total = etotal;
         this.borrar = eborrar;
+        this.listSubject = listSubject;
     }
 
     getNombre() {
         return parseInt(this.nombre.value);
-    }
-
-    getMaterias() {
-        return parseInt(this.materias.value);
-    }
-
-    getValor() {
-        return parseInt(this.valor.value);
     }
 
     getDescuento() {
@@ -38,14 +36,6 @@ class Calculadora {
 
     setNombre(nombre) {
         this.nombre.value = nombre;
-    }
-
-    setMaterias(materias) {
-        this.materias.value = materias;
-    }
-
-    setValor(valor) {
-        this.valor.value = valor;
     }
 
     setDescuento(descuento) {
@@ -65,34 +55,34 @@ class Calculadora {
     }
 
     default() {
-        this.setNombre("")
-        this.setMaterias(0)
-        this.setValor(0)
-        this.setTotal(0)
-        this.setDescuento(0)
-        this.setPapeleria(20000)
-        this.setCarnet(8000)
-    }
-
-    getTotalMaterias() {
-        return this.getMaterias() * this.getValor();
+        this.setNombre("");
+        this.setTotal(0);
+        this.setDescuento(0);
+        this.setPapeleria(20000);
+        this.setCarnet(8000);
+        this.listSubject.default();
     }
 
     getDescuento() {
-        return this.getTotalMaterias() * 20 / 100;
+        return this.listSubject.getTotal() * 20 / 100;
     }
 
     calculate() {
         const valorPapeleria = this.getPapeleria();
         const valorCarnet = this.getCarnet();
-        const totalMaterias = this.getTotalMaterias();
+        const totalMaterias = this.listSubject.getTotal();
         const valorDescuento = this.getDescuento();
         const total = totalMaterias - valorDescuento + valorPapeleria + valorCarnet;
+        this.setDescuento(valorDescuento.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'COP',
+        }));
         this.setTotal(total.toLocaleString('en-US', {
             style: 'currency',
             currency: 'COP',
         }))
     }
+
 }
 
 export { Calculadora }
